@@ -1,2 +1,0 @@
-# mycode
-All In one

@@ -1,0 +1,42 @@
+INTERFACE_DIR=../
+PUBLIC_INCLUDE_DIR=/opt/interface/include
+APP_LIB_DIR=/opt/interface/lib
+
+INCLUDES = -I./ -I$(PUBLIC_INCLUDE_DIR)
+
+C_FLAGS += -Wall -g
+AR_FLAGS += -r
+
+CC = gcc $(INCLUDES) $(C_FLAGS) -c
+AR = ar
+
+
+REL_LIB1 =libsemaphore.a 
+REL_LIB2 =libshare_mem.a
+
+REL_OBJ1 = semaphore.o 
+REL_OBJ2 = share_mem.o
+
+all: $(REL_LIB1) $(REL_LIB2) install
+
+$(REL_LIB1): $(REL_OBJ1)
+	$(AR) $(AR_FLAGS) $(REL_LIB1) $(REL_OBJ1)
+
+$(REL_LIB2): $(REL_OBJ2)
+	$(AR) $(AR_FLAGS) $(REL_LIB2) $(REL_OBJ2)
+
+semaphore.o : semaphore.c $(PUBLIC_INCLUDE_DIR)/semaphore.h
+	$(CC) $(C_FLAGS) -o $@ $<
+
+share_mem.o : share_mem.c $(PUBLIC_INCLUDE_DIR)/share_mem.h
+	$(CC) $(C_FLAGS) -o $@ $<
+
+
+clean:
+	rm -f *.o 
+	rm -f *.a
+
+install: $(REL_LIB1) $(REL_LIB2)
+	install -d $(APP_LIB_DIR)
+	install $(REL_LIB1) $(APP_LIB_DIR)
+	install $(REL_LIB2) $(APP_LIB_DIR) 
