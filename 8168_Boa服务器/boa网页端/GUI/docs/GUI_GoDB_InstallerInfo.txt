@@ -1,8 +1,0 @@
-The IP Camera UI App was developed in GoDB and could be customized using the GoDB SDK, which consists of the following:
- - GStudio Integrated Development Environment
- - GoDB VM (Win32 version) 
- - GBasic Language Reference (Help file)
-
-Register (free) to get a 30-day evaluation version of the SDK from http://www.go-db.com/signup1.asp and download the "GoDB 5.2 IPNC Release"
-
-Please contact GoDB sales representative (sales@godbtech.com), if user needs to buy GoDB Gstudio license. 
