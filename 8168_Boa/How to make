@@ -1,0 +1,2 @@
+Use ./boa-0.94.13/src/makefile to make.
+You may need to install flex and Bison if there is coherence erro.
