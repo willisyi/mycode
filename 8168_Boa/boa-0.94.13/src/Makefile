@@ -5,7 +5,7 @@
 .SUFFIXES: .o .c
 .PHONY: clean mrclean distclean depend all dist
 
-ROOTDIR = ../..
+ROOTDIR = ../../..
 INSTALLDIR = $(ROOTDIR)/target/rfs_816x/opt/dvr_rdk/ti816x
 APP_LIB_DIR = $(ROOTDIR)/interface/lib
 FC_TOOLS_DIR = $(ROOTDIR)/ti_tools/framework_components/framework_components_3_22_02_08/fctools
